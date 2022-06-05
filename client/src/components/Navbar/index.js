@@ -16,7 +16,7 @@ const Navbar = () => {
   const logout = () => {
     dispatch({ type: 'LOGOUT' })
 
-    navigate.push('/')
+    navigate('/')
 
     setUser(null)
   }
@@ -25,7 +25,8 @@ const Navbar = () => {
     const token = user?.token
 
     setUser(JSON.parse(localStorage.getItem('profile')))
-  }, [user?.token])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location])
 
   return (
     <AppBar className={classes.appBar} position='static' color='inherit'>
@@ -60,7 +61,7 @@ const Navbar = () => {
               {user.result.name}
             </Typography>
             <Button
-              variant='container'
+              variant='contained'
               className={classes.logout}
               color='secondary'
               onClick={logout}
