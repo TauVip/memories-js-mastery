@@ -26,4 +26,4 @@ mongoose.connect(process.env.CONNECTION_URL, null, err => {
 })
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
 
-// MERN Auth - Login with Email (JWT) + Google OAuth Authentication | React, Node, Express, MongoDB | 2:18:21 / 2:43:31
+// MERN Auth - Login with Email (JWT) + Google OAuth Authentication | React, Node, Express, MongoDB | 2:21:29 / 2:43:31

@@ -7,7 +7,7 @@ import { useState } from 'react'
 const Home = () => {
   const classes = useStyles()
 
-  const [currentId, setCurrentId] = useState(null)
+  const [currentId, setCurrentId] = useState(0)
 
   return (
     <Grow in>

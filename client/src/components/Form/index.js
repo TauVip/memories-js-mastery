@@ -24,8 +24,20 @@ const Form = ({ currentId, setCurrentId }) => {
     if (post) setPostData(post)
   }, [post])
 
+  const clear = () => {
+    setCurrentId(0)
+    setPostData({
+      title: '',
+      message: '',
+      tags: '',
+      selectedFile: ''
+    })
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
+
+    console.log(currentId)
 
     if (currentId === 0)
       dispatch(createPost({ ...postData, name: user?.result?.name }))
@@ -33,16 +45,6 @@ const Form = ({ currentId, setCurrentId }) => {
       dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }))
 
     clear()
-  }
-
-  const clear = () => {
-    setCurrentId(null)
-    setPostData({
-      title: '',
-      message: '',
-      tags: '',
-      selectedFile: ''
-    })
   }
 
   if (!user?.result?.name)
