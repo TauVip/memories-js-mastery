@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use('/posts', postRoutes)
 app.use('/user', userRoutes)
 
-app.get('/', (req, res) => res.send('Hello to Memories API'))
+app.get('/', (_, res) => res.send('Hello to Memories API'))
 
 const PORT = process.env.PORT || 5000
 
@@ -26,4 +26,4 @@ mongoose.connect(process.env.CONNECTION_URL, null, err => {
 })
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
 
-// MERN Auth - Login with Email (JWT) + Google OAuth Authentication | React, Node, Express, MongoDB | 2:21:29 / 2:43:31
+// Full Stack MERN Project - Pagination & Search | React + Redux, Node, Express, MongoDB | 1:28:39 / 1:57:42

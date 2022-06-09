@@ -7,7 +7,7 @@ import {
   Typography
 } from '@material-ui/core'
 import { LockOutlined } from '@material-ui/icons'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Input from './Input'
 import useStyles from './styles'
 import { GoogleLogin } from 'react-google-login'
@@ -32,6 +32,11 @@ const Auth = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [isSignUp, setIsSignUp] = useState(false)
   const [formData, setFormData] = useState(initialState)
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('profile'))
+    if (user) navigate('/posts')
+  }, [navigate])
 
   const handleShowPassword = () => setShowPassword(!showPassword)
 
